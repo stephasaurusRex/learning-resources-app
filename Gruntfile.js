@@ -8,9 +8,8 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
   grunt.loadNpmTasks(‘grunt-build-control’);
-  var pkg = require('./package.json');
+  var pkg = require('./package.json'); 
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -223,7 +222,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -419,7 +418,8 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
- buildcontrol: {
+    
+    buildcontrol: {
       options: {
         dir: 'dist',
         commit: true,
@@ -428,13 +428,13 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:stephasaurusRex/learning-resources-app.git',
+          remote: 'git@github.com:learning-resources-app.git',
           branch: 'gh-pages'
         }
       },
       heroku: {
         options: {
-          remote: 'git@github.com:stephasaurusRex/learning-resources-app.git',
+          remote: 'git@heroku.com:example-heroku-webapp-1988.git',
           branch: 'master',
           tag: pkg.version
         }
@@ -455,8 +455,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
-  grunt.loadNpmTasks(‘grunt-build-control’);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
