@@ -93,7 +93,9 @@ body {
   }
 
   .resource-top-section h1 {
-      color: white;
+    color: white;
+    line-height: 30vh;
+    margin-left: 5vw;
   }
 
   .resource-top-section {
@@ -108,6 +110,7 @@ body {
     background-color: white;
     width: 100vw;
     margin-left: -15px;
+    padding: calc(5vw + 15px);
   }
 
   .resource-container {
