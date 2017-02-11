@@ -429,7 +429,7 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:learning-resources-app.git',
+          remote: 'git@github.com:stephasaurusRex/learning-resources-app.git',
           branch: 'gh-pages'
         }
       },
