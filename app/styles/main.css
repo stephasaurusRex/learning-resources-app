@@ -62,7 +62,8 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 100%;
+    height: 100%;
   }
 
   /* Remove the padding we set earlier */
@@ -79,5 +80,37 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  body {
+    background-image: url("../images/library.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  html {
+    height: 100%
+  }
+
+  .resource-top-section h1 {
+      color: white;
+  }
+
+  .resource-top-section {
+    top: 0;
+    height: 20%;
+  }
+
+  .resource-bottom-section {
+    opacity: .9;
+    height: 80%;
+    bottom: 0;
+    background-color: white;
+    width: 100vw;
+    margin-left: -15px;
+  }
+
+  .resource-container {
+    height: 100vh;
   }
 }
