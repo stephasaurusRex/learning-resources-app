@@ -1,9 +1,68 @@
 <div class="resource-container">
   <div class="resource-top-section">
-    <h1>{{resource.title}}</h1>
+    <h1>{{resourceCtrl.title}}</h1>
   </div>
   <div class="resource-bottom-section">
-    <p>stuff in here for now that will be resources</p>
+    <div>
+      <input type="button" class="btn btn-primary add-button" ng-click="resourceCtrl.addResourceForm()" value="Add New Resource"/>
+    </div>
+
+
+    <div class="resources-table-header">
+      <div class="col-sm-4">
+        <span class="title">Resource Name</span>
+      </div>
+      <div class="col-sm-4">
+        <span class="title">Link</span>
+      </div>
+      <div class="col-sm-2">
+        <span class="title">Created</span>
+      </div>
+      <div class="col-sm-2">
+
+      </div>
+    </div>
+
+    <div class="resources-table-content">
+      <div class="row" ng-repeat="resource in resourceCtrl.resources">
+        <div ng-switch on="resource.edit">
+          <div ng-switch-when="true">
+            <!-- code to render resource in edit mode -->
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="Enter a name for this resource..." ng-value="resource.name" ng-model="resource.name"/>
+            </div>
+            <div class="col-sm-4">
+              <input class="form-control" type="text" placeholder="Enter the link to this resource..." ng-value="resource.link" ng-model="resource.link"/>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" ng-value="resource.date" disabled="true"/>
+            </div>
+            <div class="col-sm-2">
+              <i class="fa fa-plus-circle plus" aria-hidden="true" ng-click="resourceCtrl.saveResource(resource)"></i>
+              <i class="fa fa-minus minus" aria-hidden="true" ng-click="resourceCtrl.deleteResource(resource)"></i>
+            </div>
+          </div>
+
+          <div ng-switch-default>
+            <!-- code to render resource in display mode -->
+            <div class="col-sm-4">
+              {{resource.name}}
+            </div>
+            <div class="col-sm-4">
+              <a href={{resource.link}}>{{resource.link}}</a>
+            </div>
+            <div class="col-sm-2">
+              {{resource.date}}
+            </div>
+            <div class="col-sm-2">
+              <i class="fa fa-pencil-square-o plus" aria-hidden="true" ng-click="resourceCtrl.editResource(resource)"></i>
+              <i class="fa fa-minus minus" aria-hidden="true" ng-click="resourceCtrl.deleteResource(resource)"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

@@ -22,7 +22,7 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'ResourceCtrl',
-        controllerAs: 'resource'
+        controllerAs: 'resourceCtrl'
       })
       .otherwise({
         redirectTo: '/'

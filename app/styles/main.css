@@ -86,6 +86,7 @@ body {
     background-image: url("../images/library.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
   }
 
   html {
@@ -113,7 +114,48 @@ body {
     padding: calc(5vw + 15px);
   }
 
+  .resource-bottom-section > * {
+    opacity: 1 !important;
+  }
+
   .resource-container {
     height: 100vh;
+  }
+
+  .add-button {
+    position: absolute;
+    margin-top: -40px;
+    right: 5vw;
+  }
+
+  .resources-table-header {
+    margin-top: 15px;
+  }
+
+  .resources-table-content {
+    margin-top: 50px;
+  }
+
+  .row {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  .plus {
+    color: limegreen;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .minus {
+    color: darkred;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .title {
+    font-weight: bold;
+    color: #2f2f2f;
   }
 }
