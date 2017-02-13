@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name learningResourceWebAppApp.controller:MainCtrl
+ * @name learningResourceWebApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the learningResourceWebAppApp
+ * Controller of the learningResourceWebApp
  */
-angular.module('learningResourceWebAppApp')
-  .controller('ResourceCtrl', function () {
+angular.module('learningResourceWebApp')
+  .controller('ResourceCtrl', function ($scope, $log) {
     this.title = "Learning Resources";
     
     this.resources = [];
@@ -21,13 +21,15 @@ angular.module('learningResourceWebAppApp')
         link: '',
         id: this.resources.length + 1,
         date: moment(new Date()).format('MM/DD/YYYY'),
+        type: '',
         edit: true
       })
     };
     
     this.saveResource = function(resource) {
       if(resource.name.length == 0 ||
-            resource.link.length == 0) {
+            resource.link.length == 0 ||
+              resource.type.length == 0) {
         alert('Please enter all values to save the resource.');
         return;
       }
@@ -56,24 +58,14 @@ angular.module('learningResourceWebAppApp')
         id: resource.id
       })] = resource;
     };
-  
-    this.items = [
-      'The first choice!',
-      'And another choice for you.',
-      'but wait! A third!'
-    ];
-  
-    this.status = {
-      isopen: false
-    };
-  
-    this.toggled = function(open) {
-      $log.log('Dropdown is now: ', open);
-    };
-  
-    this.toggleDropdown = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-      this.status.isopen = !this.status.isopen;
-    };
+    
+    this.selectType = function(resource, type) {
+      resource.type = type;
+      
+      this.resources[_.findWhere(this.resources, {
+        id: resource.id
+      })] = resource;
+    }
+    
+    
   });

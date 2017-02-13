@@ -2,20 +2,21 @@
 
 /**
  * @ngdoc overview
- * @name learningResourceWebAppApp
+ * @name learningResourceWebApp
  * @description
- * # learningResourceWebAppApp
+ * # learningResourceWebApp
  *
  * Main module of the application.
  */
 angular
-  .module('learningResourceWebAppApp', [
+  .module('learningResourceWebApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
