@@ -11,6 +11,10 @@ https://github.com/shinwang1/Angular-deployment-tutorial/blob/master/README.md
 
 https://github.com/robwierzbowski/grunt-build-control
 
+Angular Bootstrap
+Underscore JS
+Font-awesome icons
+
 This application was built with one simple view for adding, editing, and deleting resources.
  
 The corresponding controller is used to keep track of an array of resources. 
@@ -29,7 +33,7 @@ Interactions between the view and controller rely heavily on the two-way data bi
 
 ## Questions/Thoughts
 
-Right now this is a very simple view, and a signle page application. As the application grows, it would potentially be appropriate to create custom directives for both editing and displaying rows.
+Right now this is a very simple view, and a single page application. As the application grows, it would potentially be appropriate to create custom directives for both editing and displaying rows.
 
 The naming conventions and 'copy' as it were, followed the language of the application prompt, but further consideration of how a user might reference a "Learning Resource" in a different way or with a different name would be a good next step.
 
