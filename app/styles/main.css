@@ -105,7 +105,7 @@ body {
   }
 
   .resource-bottom-section {
-    opacity: .9;
+    opacity: .96;
     height: 80%;
     bottom: 0;
     background-color: white;
@@ -145,12 +145,26 @@ body {
     color: limegreen;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .save {
+    color: limegreen;
+    cursor: pointer;
+    margin-top: 5px;
   }
 
   .minus {
     color: darkred;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .minus-display {
+    color: darkred;
+    cursor: pointer;
+    margin-top: 5px;
     margin-left: 5px;
   }
 
@@ -167,5 +181,19 @@ body {
 
   .move-left {
     margin-left: -5px;
+  }
+
+  .empty-text {
+    text-align: center;
+    padding-top: 20px;
+    color: #9f9f9f;
+    font-weight: bold;
+  }
+
+  .display-row {
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    height: 30px;
+    padding-top: 5px;
   }
 }

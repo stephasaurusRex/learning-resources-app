@@ -33,11 +33,13 @@ angular.module('learningResourceWebApp')
       if(resource.name.length == 0 ||
             resource.link.length == 0 ||
               resource.type.length == 0) {
-        alert('Please enter all values to save the resource.');
+        //alert text when save won't work
+        alert('All fields required to save the resource.');
         return;
       }
       
       resource.edit = false;
+      resource.saveAlert = false;
       
       if(resource.link.indexOf('http://') != 0 && resource.link.indexOf('https://') != 0) {
         resource.link = 'http://' + resource.link;
