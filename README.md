@@ -47,6 +47,8 @@ What other features might be useful to a user?
   • Playing videos (or previewing articles) on the site directly - again this might preclude this particular design - or this design could be used with another route to a details page about the resource
   
   • Adding some sort of pattern matching to the link field might prevent user error as far as adding links - but for now flexibility is the trade off for potential error here
+  
+  • Sorting and searching capability on the table (create date would be much more pertinent in this case and was added with this future feature in mind.)
 
 ## Build & development
 
