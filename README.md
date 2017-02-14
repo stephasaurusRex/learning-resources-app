@@ -12,7 +12,9 @@ https://github.com/shinwang1/Angular-deployment-tutorial/blob/master/README.md
 https://github.com/robwierzbowski/grunt-build-control
 
 Angular Bootstrap
+
 Underscore JS
+
 Font-awesome icons
 
 This application was built with one simple view for adding, editing, and deleting resources.
