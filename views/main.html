@@ -7,7 +7,7 @@
       <input type="button" class="btn btn-primary add-button" ng-click="resourceCtrl.addResourceForm()" value="Add New Resource"/>
     </div>
 
-
+    <!-- table header -->
     <div class="resources-table-header">
       <div class="col-sm-3">
         <span class="title">Resource Name</span>
@@ -21,11 +21,13 @@
       <div class="col-sm-2">
         <span class="title">Created</span>
       </div>
+      <!-- For spacing -->
       <div class="col-sm-2">
 
       </div>
     </div>
 
+    <!-- content -->
     <div class="resources-table-content">
       <div class="row" ng-repeat="resource in resourceCtrl.resources">
         <div ng-switch on="resource.edit">
@@ -34,15 +36,14 @@
             <div class="col-sm-3">
               <input type="text" class="form-control" placeholder="Enter a name for this resource..." ng-value="resource.name" ng-model="resource.name"/>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 move-left">
               <input class="form-control" type="text" placeholder="Enter the link to this resource..." ng-value="resource.link" ng-model="resource.link"/>
             </div>
             <div class="col-sm-2">
+              <!-- Bootstrap dropdown for type -->
               <div class="btn-group" uib-dropdown>
-                <button id="split-button" type="button" class="btn btn-primary">{{resource.type.length == 0 ? 'Type' : resource.type}}</button>
-                <button type="button" class="btn btn-primary" uib-dropdown-toggle>
-                  <span class="caret"></span>
-                  <span class="sr-only">Split button!</span>
+                <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                  {{resource.type.length == 0 ? 'Type' : resource.type}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                   <li ng-repeat="type in resourceCtrl.types">
@@ -51,7 +52,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 move-left">
               <input type="text" class="form-control" ng-value="resource.date" disabled="true"/>
             </div>
             <div class="col-sm-2">
@@ -61,7 +62,7 @@
           </div>
 
           <div ng-switch-default>
-            <!-- code to render resource in display mode -->
+            <!-- code to render resource in display mode (aka edit state false) -->
             <div class="col-sm-3">
               {{resource.name}}
             </div>
