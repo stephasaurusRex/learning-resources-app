@@ -39,6 +39,8 @@ Right now this is a very simple view, and a single page application. As the appl
 
 The naming conventions and 'copy' as it were, followed the language of the application prompt, but further consideration of how a user might reference a "Learning Resource" in a different way or with a different name would be a good next step.
 
+I'm not a huge fan of the alert pop up to warn the user about issues with save - and on a subsequent iteration would want to come up with something prettier - but this has the desired functionality.
+
 What other features might be useful to a user?
   • Taking notes on resources? The inline editing might not be ideal in this case.
   
