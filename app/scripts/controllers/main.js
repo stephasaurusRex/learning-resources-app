@@ -15,6 +15,7 @@ angular.module('learningResourceWebApp')
     
     this.types = ['Podcast', 'Blog', 'Article', 'Tutorial', 'Other'];
     
+    //Adds an empty resource object except for the created date
     this.addResourceForm = function() {
       this.resources = this.resources.concat({
         name: '',
@@ -26,6 +27,8 @@ angular.module('learningResourceWebApp')
       })
     };
     
+    //Changes the resource edit state to false, adds http to resource link if the link does not being with http(s)://
+    //Note: if a persistence layer were being utilized the call to persist the data would also go here
     this.saveResource = function(resource) {
       if(resource.name.length == 0 ||
             resource.link.length == 0 ||
@@ -45,12 +48,14 @@ angular.module('learningResourceWebApp')
       })] = resource;
     };
     
+    //Deletes resource from resources array
     this.deleteResource = function(resource) {
       this.resources = _.without(this.resources, _.findWhere(this.resources, {
         id: resource.id
       }));
     };
     
+    //Changes the resource edit state to true
     this.editResource = function(resource) {
       resource.edit = true;
       
@@ -59,6 +64,7 @@ angular.module('learningResourceWebApp')
       })] = resource;
     };
     
+    //Selects type in the type dropdown
     this.selectType = function(resource, type) {
       resource.type = type;
       
